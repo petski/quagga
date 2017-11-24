@@ -1,0 +1,22 @@
+See https://bugzilla.quagga.net/show_bug.cgi?id=966
+
+--- a/lib/command.c	2017-11-23 09:51:34.782385916 +0100
++++ a/lib/command.c	2017-11-23 09:52:05.934519889 +0100
+@@ -3070,7 +3070,7 @@
+ 	        VTY_NEWLINE);
+       goto finished;
+     }
+-  sync ();
++  //sync ();
+   if (unlink (config_file) != 0)
+     {
+       vty_out (vty, "Can't unlink configuration file %s.%s", config_file,
+@@ -3083,7 +3083,7 @@
+ 	       VTY_NEWLINE);
+       goto finished;
+     }
+-  sync ();
++  //sync ();
+   
+   if (chmod (config_file, CONFIGFILE_MASK) != 0)
+     {
