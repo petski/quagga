@@ -29,7 +29,7 @@ RUN ln -sf /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
 
 RUN sed -i -e '/^deb[[:space:]]/!d' -e 'p; s/^deb/deb-src/' /etc/apt/sources.list
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y dpkg-dev devscripts vim 
+RUN apt-get install -y dpkg-dev devscripts vim-tiny 
 RUN apt-get install -y quagga
 RUN apt-get build-dep -y quagga
 
