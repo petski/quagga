@@ -12,12 +12,12 @@
 # Usefull commands:
 # $ docker logs quagga
 # $ docker exec -i -t quagga /bin/bash
-# $ docker cp quagga:/usr/local/src/quagga_0.99.23.1-1+deb8u4petski1_amd64.deb .
+# $ docker cp quagga:/usr/local/src/quagga_0.99.23.1-1+deb8u5petski1_amd64.deb .
 #
 # To pin to this version:
 # $ cat /etc/apt/preferences.d/quagga
 # Package: quagga
-# Pin: version 0.99.23.1-1+deb8u4petski1
+# Pin: version 0.99.23.1-1+deb8u5petski1
 # Pin-Priority: 1001
 
 FROM debian:jessie
@@ -52,7 +52,7 @@ RUN debuild -us -uc
 
 WORKDIR /usr/local/src/
 
-RUN dpkg -i quagga_0.99.23.1-1+deb8u4petski1_amd64.deb
+RUN dpkg -i quagga_0.99.23.1-1+deb8u5petski1_amd64.deb
 RUN dpkg-query -l quagga
 
 COPY bgpd.conf /etc/quagga/bgpd.conf
